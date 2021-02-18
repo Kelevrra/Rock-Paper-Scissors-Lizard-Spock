@@ -1,12 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LinkToggle.scss';
 
-const LinkToggle = () => {
+const LinkToggle = ({version, setVersion}) => {
+  const { t } = useTranslation();
+  const btn = version ? `${t('Fun version')} 😈` : t('Back to normal')
   return (
-    <a className="link" href="/">
-      Fun version 😈
-    </a>
+    <button className="link" type="button" onClick={() => setVersion(em => !em)}>
+      {btn}
+    </button>
   );
 }
 

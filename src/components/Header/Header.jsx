@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
 
-const Header = () => {
+const Header = ({version, setVersion, score}) => {
   const { t } = useTranslation();
   return (
     <header className="header container">
@@ -22,8 +22,13 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="row align-items-center">
-          <LinkToggle />
-          <Scope />
+          <LinkToggle
+            setVersion={setVersion}
+            version={version}
+          />
+          <Scope
+            score={score}
+          />
         </div>
       </div>
     </header>

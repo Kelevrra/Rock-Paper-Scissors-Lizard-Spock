@@ -7,6 +7,8 @@ export default {
   "Game rulls": "Game rulls",
   "score": "Score",
   "Beating": "Beating",
+  "Fun version": "Fun version",
+  "Back to normal": "Back to normal",
   "rullsHelper": {
     "rock": {
       "name": "Rock",
