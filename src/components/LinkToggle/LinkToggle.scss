@@ -1,0 +1,21 @@
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: none;
+        color: yellow;
+        border: 2px solid yellow;
+        cursor: pointer;
+    }
+}

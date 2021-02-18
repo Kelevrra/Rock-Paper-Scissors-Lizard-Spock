@@ -5,5 +5,28 @@ export default {
   "icon-lang": "eng-icon.svg",
   "How to play": "How to play",
   "Game rulls": "Game rulls",
-  "score": "Score"
+  "score": "Score",
+  "Beating": "Beating",
+  "rullsHelper": {
+    "rock": {
+      "name": "Rock",
+      "beat": "Lizard & Scissors"
+    },
+    "paper": {
+      "name": "Paper",
+      "beat": "Rock & Spock"
+    },
+    "scissors": {
+      "name": "Scissors",
+      "beat": "Paper & Lizard"
+    },
+    "lizard": {
+      "name": "Lizard",
+      "beat": "Paper & Spock"
+    },
+    "spock": {
+      "name": "Spock",
+      "beat": "Rock & Scissors"
+    }
+  }
 }

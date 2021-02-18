@@ -5,5 +5,28 @@ export default {
   "icon-lang": "ru-icon.svg",
   "How to play": "Правила игры",
   "Game rulls": "Правила игры",
-  "score": "Результат"
+  "score": "Результат",
+  "Beating": "Бьёт",
+  "rullsHelper": {
+    "rock": {
+      "name": "Камень",
+      "beat": "Ящерицу & Ножницы"
+    },
+    "paper": {
+      "name": "Бумага",
+      "beat": "Камень & Спока"
+    },
+    "scissors": {
+      "name": "Ножницы",
+      "beat": "Бумагу & Ящерицу"
+    },
+    "lizard": {
+      "name": "Ящерица",
+      "beat": "Бумагу & Спока"
+    },
+    "spock": {
+      "name": "Спок",
+      "beat": "Камень & Ножницы"
+    }
+  }
 }

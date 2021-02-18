@@ -6,6 +6,10 @@
   background: linear-gradient(to left, #2b5876, #4e4376);
   //https://digitalsynopsis.com/design/beautiful-color-ui-gradients-backgrounds/
   color: white;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h1, h2, h3 {

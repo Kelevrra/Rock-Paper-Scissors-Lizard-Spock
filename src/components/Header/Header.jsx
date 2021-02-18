@@ -2,6 +2,7 @@ import React from 'react';
 import Scope from '../Scope/Scope';
 import Langs from '../Langs/Langs';
 import Rulls from '../Rulls/Rulls';
+import LinkToggle from '../LinkToggle/LinkToggle';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
@@ -19,7 +20,12 @@ const Header = () => {
           <Langs />
         </div>
       </div>
-      <Scope />
+      <div className="container">
+        <div className="row align-items-center">
+          <LinkToggle />
+          <Scope />
+        </div>
+      </div>
     </header>
   );
 };

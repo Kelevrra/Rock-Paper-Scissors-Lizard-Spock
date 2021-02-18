@@ -1,0 +1,15 @@
+.footer {
+    p {
+        font-weight: 600;
+        color: #d6d6d6;
+        a {
+            color: white;
+            text-decoration: none;
+            color: #d6d6d6;
+            &:hover {
+                color: white;
+                transition: .3s;
+            }
+        }
+    }
+}
