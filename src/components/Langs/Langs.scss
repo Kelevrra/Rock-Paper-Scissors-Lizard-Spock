@@ -1,0 +1,12 @@
+.langs {
+    width: fit-content;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+    // border: 2px solid white;
+    background: transparent;
+
+    .dropdown-toggle.btn.btn-primary {
+        background: transparent;
+        border: none;
+    }
+}

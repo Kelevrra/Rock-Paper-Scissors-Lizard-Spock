@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background: #23074D;
+  background: -webkit-linear-gradient(to left, #2b5876, #4e4376);
+  background: linear-gradient(to left, #2b5876, #4e4376);
+  //https://digitalsynopsis.com/design/beautiful-color-ui-gradients-backgrounds/
+  color: white;
+}
+
+h1, h2, h3 {
+  margin: 0;
 }
 
 .App-logo {

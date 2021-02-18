@@ -1,0 +1,21 @@
+.scope {
+    position: relative;
+    margin: 10px 0 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 10px;
+
+    &__title {
+        position: absolute;
+        top: 5px;
+        font-size: .8rem;
+    }
+
+    &__counter {
+        font-size: 2rem;
+    }
+}
