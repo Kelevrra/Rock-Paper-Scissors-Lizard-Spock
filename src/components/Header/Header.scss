@@ -15,6 +15,9 @@
         }
         .title {
             display: flex;
+            @media(max-width: 768px) {
+                font-size: 1.4rem;
+            }
         }
     }
 }

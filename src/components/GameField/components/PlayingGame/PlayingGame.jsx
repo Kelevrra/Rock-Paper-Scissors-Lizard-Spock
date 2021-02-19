@@ -5,23 +5,41 @@ import ReloadPopup from '../ReloadPopup/ReloadPopup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PlayingGame.scss'
 
-import rock from '../../../../assets/rock-fun.png'
-import paper from '../../../../assets/paper-fun.jpg'
-import scissors from '../../../../assets/scissors-fun.jpeg'
-import lizard from '../../../../assets/lizard-fun.jpg'
-import spock from '../../../../assets/spock-fun.jpg'
+import rock from '../../../../assets/rock.svg'
+import paper from '../../../../assets/paper.svg'
+import scissors from '../../../../assets/scissors.svg'
+import lizard from '../../../../assets/lizard.svg'
+import spock from '../../../../assets/spock.svg'
 
-const PlayingGame = ({chosenItem, setGameInit, setChosenItem, setScore, score}) => {
+import rockFun from '../../../../assets/rock-fun.png'
+import paperFun from '../../../../assets/paper-fun.jpg'
+import scissorsFun from '../../../../assets/scissors-fun.jpeg'
+import lizardFun from '../../../../assets/lizard-fun.jpg'
+import spockFun from '../../../../assets/spock-fun.jpg'
+
+const PlayingGame = ({chosenItem, setGameInit, setChosenItem, setScore, score, version}) => {
   const variants = ['rock', 'paper', 'scissors', 'lizard', 'spock']
   const [botItem, setBotItem] = useState(variants[Math.floor(Math.random() * variants.length)])
   const [timerUp, setTimerUp] = useState(false)
   const [winner, setWinner] = useState(false)
 
-  const bgPlay = chosenItem === '' ? '' : (chosenItem === 'rock' ? rock 
+  // const bgPlay = chosenItem === '' ? '' : (chosenItem === 'rock' ? rock 
+  // : chosenItem === 'paper' ? paper
+  // : chosenItem === 'scissors' ? scissors
+  // : chosenItem === 'lizard' ? lizard
+  // : spock);
+
+  const bgPlay = chosenItem === '' ? '' 
+  : !version && chosenItem !== '' ? (chosenItem === 'rock' ? rockFun
+  : chosenItem === 'paper' ? paperFun
+  : chosenItem === 'scissors' ? scissorsFun
+  : chosenItem === 'lizard' ? lizardFun
+  : spockFun) : (chosenItem === 'rock' ? rock
   : chosenItem === 'paper' ? paper
   : chosenItem === 'scissors' ? scissors
   : chosenItem === 'lizard' ? lizard
   : spock);
+    
 
   return (
     <div className="playing-game d-flex align-items-center justify-content-between">
@@ -40,6 +58,7 @@ const PlayingGame = ({chosenItem, setGameInit, setChosenItem, setScore, score}) 
         chosenItem={chosenItem}
         setScore={setScore}
         score={score}
+        version={version}
       />
       <ReloadPopup
         setGameInit={setGameInit}

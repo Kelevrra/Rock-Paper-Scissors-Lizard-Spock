@@ -3,11 +3,12 @@ import Scope from '../Scope/Scope';
 import Langs from '../Langs/Langs';
 import Rulls from '../Rulls/Rulls';
 import LinkToggle from '../LinkToggle/LinkToggle';
+import AudioController from '../AudioController/AudioController';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
 
-const Header = ({version, setVersion, score}) => {
+const Header = ({version, setVersion, score, soundOn, setSoundOn}) => {
   const { t } = useTranslation();
   return (
     <header className="header container">
@@ -25,6 +26,10 @@ const Header = ({version, setVersion, score}) => {
           <LinkToggle
             setVersion={setVersion}
             version={version}
+          />
+          <AudioController
+            soundOn={soundOn}
+            setSoundOn={setSoundOn}
           />
           <Scope
             score={score}

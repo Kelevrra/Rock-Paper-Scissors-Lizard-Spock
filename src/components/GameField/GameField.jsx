@@ -70,6 +70,7 @@ const GameField = ({version, gameInit, setGameInit, setScore, score}) => {
       setChosenItem={setChosenItem}
       chosenItem={chosenItem}
       setGameInit={setGameInit}
+      version={version}
     />}
 
     </div>

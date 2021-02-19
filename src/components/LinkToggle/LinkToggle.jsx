@@ -8,7 +8,7 @@ const LinkToggle = ({version, setVersion}) => {
   const btn = version ? `${t('Fun version')} 😈` : t('Back to normal')
   return (
     <button className="link" type="button" onClick={() => setVersion(em => !em)}>
-      {btn}
+      <span>{btn}</span>
     </button>
   );
 }

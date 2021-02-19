@@ -1,6 +1,6 @@
 .scope {
     position: relative;
-    margin: 10px 0 10px auto;
+    margin: 10px 0 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,5 +19,6 @@
     &__counter {
         font-size: 2rem;
         font-weight: 500;
+        margin-top: 10px;
     }
 }

@@ -10,12 +10,17 @@ function App() {
   const [gameInit, setGameInit] = useState(false)
   const [score, setScore] = useState(0)
 
+  const [soundOn, setSoundOn] = useState(true)
+
   return (
     <div className="App">
       <Header
         setVersion={setVersion}
         version={version}
         score={score}
+
+        soundOn={soundOn}
+        setSoundOn={setSoundOn}
       />
       <main className="container">
         <GameField
