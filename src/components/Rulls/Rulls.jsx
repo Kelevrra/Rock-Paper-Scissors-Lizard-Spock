@@ -24,6 +24,7 @@ const Rulls = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <p className="rulls__description">{t('gameTitle')}</p>
           <img className="rulls__img" src={ rullsImg } alt=""/>
         </Modal.Body>
       </Modal>
