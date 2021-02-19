@@ -1,12 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown, DropdownButton, ButtonGroup} from 'react-bootstrap';
 import './Langs.scss';
-import engIcon from '../../assets/eng-icon.svg'
-import ruIcon from '../../assets/rus-icon.svg'
-
 import '../../locales/locales';
 import { useTranslation } from 'react-i18next';
+import engIcon from '../../assets/eng-icon.svg'
+import ruIcon from '../../assets/rus-icon.svg'
 
 const Langs = () => {
   const { t, i18n } = useTranslation();

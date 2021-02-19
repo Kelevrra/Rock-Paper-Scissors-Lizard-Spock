@@ -9,6 +9,10 @@ export default {
   "Beating": "Beating",
   "Fun version": "Fun version",
   "Back to normal": "Back to normal",
+  "draw": "Draw",
+  "lose": "You lose",
+  "win": "You win",
+  "play again": "Play again",
   "rullsHelper": {
     "rock": {
       "name": "Rock",

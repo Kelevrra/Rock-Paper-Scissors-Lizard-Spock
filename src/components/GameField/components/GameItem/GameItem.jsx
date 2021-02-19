@@ -13,17 +13,16 @@ import lizard from '../../../../assets/lizard-fun.jpg'
 import spock from '../../../../assets/spock-fun.jpg'
 
 const GameItem = ({item, version, gameInit, setGameInit, chosenItem, setChosenItem, bgPlay, winner}) => {
+  const { t } = useTranslation();  
+
   const bg = version ? '' : (item === 'rock' ? rock 
   : item === 'paper' ? paper
   : item === 'scissors' ? scissors
   : item === 'lizard' ? lizard
   : spock);
 
-  const { t } = useTranslation();
   return (
-    
     <div
-    // className="item-wrapper"
     className={`item-wrapper ${winner}`}
     >
       {chosenItem === '' ? 

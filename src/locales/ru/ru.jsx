@@ -7,8 +7,12 @@ export default {
   "Game rulls": "Правила игры",
   "score": "Результат",
   "Beating": "Бьёт",
-  "Fun version": "Смешная версия",
+  "Fun version": "Фан версия",
   "Back to normal": "К обычной версии",
+  "draw": "Ничья",
+  "lose": "Ты проиграл",
+  "win": "Ты выиграл",
+  "play again": "Ещё раз",
   "rullsHelper": {
     "rock": {
       "name": "Камень",

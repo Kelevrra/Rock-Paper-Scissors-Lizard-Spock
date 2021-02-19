@@ -1,0 +1,11 @@
+.reload-popup {
+    position: absolute;
+    left: 50%;
+    top: -100px;
+    transform: translate(-50%, 0);
+    min-width: 300px;
+
+    h1 {
+        line-height: 2;
+    }
+}

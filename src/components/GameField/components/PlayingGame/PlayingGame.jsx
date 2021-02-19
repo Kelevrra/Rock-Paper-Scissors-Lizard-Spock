@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import GameItem from '../GameItem/GameItem';
 import GameItemBot from '../GameItemBot/GameItemBot';
+import ReloadPopup from '../ReloadPopup/ReloadPopup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PlayingGame.scss'
 
@@ -9,8 +10,6 @@ import paper from '../../../../assets/paper-fun.jpg'
 import scissors from '../../../../assets/scissors-fun.jpeg'
 import lizard from '../../../../assets/lizard-fun.jpg'
 import spock from '../../../../assets/spock-fun.jpg'
-
-import gameRulls from '../../../../data/gameRulls'
 
 const PlayingGame = ({chosenItem, setGameInit, setChosenItem, setScore, score}) => {
   const variants = ['rock', 'paper', 'scissors', 'lizard', 'spock']
@@ -39,31 +38,18 @@ const PlayingGame = ({chosenItem, setGameInit, setChosenItem, setScore, score}) 
         setWinner={setWinner}
         winner={winner}
         chosenItem={chosenItem}
+        setScore={setScore}
+        score={score}
       />
-      {timerUp && gameRulls(chosenItem, botItem) === 'nobody' ? <div className="modal-game">
-        <h1>Nichya eba!</h1>
-        <button className="btn btn-primary" type="button" onClick={() => {
-          setGameInit(false)
-          setChosenItem('')
-          }}>Play again</button>
-      </div>
-      : timerUp && gameRulls(chosenItem, botItem) === 'win' ? <div className="modal-game">
-        <h1>You win!</h1>
-        <button className="btn btn-primary" type="button" onClick={() => {
-          setGameInit(false)
-          setChosenItem('')
-          // setScore(score + 1)
-          }}>Play again</button>
-        </div>
-        : timerUp && gameRulls(chosenItem, botItem) === 'lose' ? <div className="modal-game">
-        <h1>You lose!</h1>
-        <button className="btn btn-primary" type="button" onClick={() => {
-          setGameInit(false)
-          setChosenItem('')
-          // setScore(score - 1)
-          }}>Play again</button>
-        </div> 
-        : ''}
+      <ReloadPopup
+        setGameInit={setGameInit}
+        setChosenItem={setChosenItem}
+        setScore={setScore}
+        score={score}
+        timerUp={timerUp}
+        chosenItem={chosenItem}
+        botItem={botItem}
+      />
     </div>
   );
 }
