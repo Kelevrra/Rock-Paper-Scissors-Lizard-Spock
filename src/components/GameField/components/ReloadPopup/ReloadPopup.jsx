@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './ReloadPopup.scss'
 import gameRulls from '../../../../data/gameRulls'
 
-const ReloadPopup = ({setGameInit, setChosenItem, setScore, score, timerUp, chosenItem, botItem}) => {
+const ReloadPopup = ({ setGameInit, setChosenItem, timerUp, chosenItem, botItem, score, setScore }) => {
   const { t } = useTranslation();
 
   return (

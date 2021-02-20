@@ -8,8 +8,8 @@
 
 .item-wrapper.win {
     box-shadow: 0 0 0 45px rgba(255, 255, 255, 0.07),
-    0 0 0 75px rgba(255, 255, 255, 0.04),
-    0 0 0 110px rgba(245, 238, 238, 0.03);
+        0 0 0 75px rgba(255, 255, 255, 0.04),
+        0 0 0 110px rgba(245, 238, 238, 0.03);
     transition: .3s;
 }
 
@@ -25,7 +25,8 @@
     cursor: pointer;
     background: transparent;
     overflow: hidden;
-    background:rgba(95, 72, 140, 0.4);
+    background: rgba(95, 72, 140, 0.4);
+
     &:hover {
         width: 180px;
         height: 180px;
@@ -33,6 +34,7 @@
         top: -15px;
         transition: .4s;
     }
+
     &:active {
         opacity: .5;
         transition: .1s;
@@ -44,6 +46,7 @@
         left: -15px;
         top: -15px;
         cursor: default;
+
         &:active {
             opacity: 1;
         }

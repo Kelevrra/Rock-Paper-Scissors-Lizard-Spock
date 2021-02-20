@@ -1,9 +1,9 @@
 import React from 'react';
-import Scope from '../Scope/Scope';
 import Langs from '../Langs/Langs';
 import Rulls from '../Rulls/Rulls';
-import LinkToggle from '../LinkToggle/LinkToggle';
 import AudioController from '../AudioController/AudioController';
+import Score from '../Score/Score';
+import GameModeToggle from '../GameModeToggle/GameModeToggle';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
@@ -23,17 +23,15 @@ const Header = ({version, setVersion, score, soundOn, setSoundOn}) => {
       </div>
       <div className="container">
         <div className="row align-items-center">
-          <LinkToggle
+          <GameModeToggle
             setVersion={setVersion}
             version={version}
           />
-          <AudioController
+          {/* <AudioController
             soundOn={soundOn}
             setSoundOn={setSoundOn}
-          />
-          <Scope
-            score={score}
-          />
+          /> */}
+          <Score score={score} />
         </div>
       </div>
     </header>

@@ -4,6 +4,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         &::before {
             content: '';
             position: absolute;
@@ -13,8 +14,10 @@
             bottom: 0;
             left: 0;
         }
+
         .title {
             display: flex;
+
             @media(max-width: 768px) {
                 font-size: 1.4rem;
             }
