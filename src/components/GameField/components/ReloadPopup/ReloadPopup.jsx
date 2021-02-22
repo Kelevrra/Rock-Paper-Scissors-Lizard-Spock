@@ -2,6 +2,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
 import './ReloadPopup.scss';
+//Audio
+import AudioPlay from '../../../AudioPlay/AudioPlay'
+import reptile from '../../../../assets/audio/reptile-wins.mp3'
+import hah from '../../../../assets/audio/hah.mp3'
 
 const ReloadPopup = ({
   version,
@@ -12,13 +16,23 @@ const ReloadPopup = ({
   botItem,
   userWin,
   userLose,
-  draw
+  draw,
+  soundOn
 }) => {
   
   const { t } = useTranslation();
 
   return (
     <div className="reload-popup">
+
+      { !version && soundOn ? (
+        <AudioPlay audio={`${chosenItem === 'lizard' && timerUp && userWin ? reptile 
+        : chosenItem === 'lizard' && timerUp && botItem === 'lizard' ? hah
+        : timerUp && userWin && botItem === 'lizard' ? hah
+        : ''}`} />
+      ) : (
+        <AudioPlay audio={``} />
+      ) }
 
       { timerUp && draw ? <div>
         <h1>{t("draw")}!</h1>

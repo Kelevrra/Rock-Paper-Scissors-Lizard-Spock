@@ -29,15 +29,21 @@ const GameItem = ({
   const { t } = useTranslation();
   const helper = `${t(`rullsHelper.${item}.name`)}! ${t('Beating')}: ${t(`rullsHelper.${item}.beat`)}`;
 
-  const itemPic = version ? (item === 'rock' ? rock 
-  : item === 'paper' ? paper
-  : item === 'scissors' ? scissors
-  : item === 'lizard' ? lizard
-  : spock) : (item === 'rock' ? rockFun 
-  : item === 'paper' ? paperFun
-  : item === 'scissors' ? scissorsFun
-  : item === 'lizard' ? lizardFun
-  : spockFun);
+  const itemPic = () => {
+    if(version) {
+      if(item === 'rock') return rock
+      if(item === 'paper') return paper
+      if(item === 'scissors') return scissors
+      if(item === 'lizard') return lizard
+      else return spock
+    } else {
+      if(item === 'rock') return rockFun
+      if(item === 'paper') return paperFun
+      if(item === 'scissors') return scissorsFun
+      if(item === 'lizard') return lizardFun
+      else return spockFun
+    }
+  }
 
   return (
     <div className={`item-wrapper ${timerUp && userWin ? 'win' : ''}`}>
@@ -52,7 +58,7 @@ const GameItem = ({
               setChosenItem(item)
             }}
           >
-            <img src={itemPic} alt=""/>
+            <img src={itemPic()} alt=""/>
           </button>
         </OverlayTrigger>
       </>

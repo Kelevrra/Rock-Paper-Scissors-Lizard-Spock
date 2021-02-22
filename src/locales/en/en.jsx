@@ -13,6 +13,7 @@ export default {
   "lose": "You lose",
   "win": "You win",
   "play again": "Play again",
+  "Reset": "Reset",
   "rullsHelper": {
     "rock": {
       "name": "Rock",

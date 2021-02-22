@@ -24,7 +24,8 @@ const PlayingGame = ({
   setChosenItem,
   setGameInit,
   score,
-  setScore
+  setScore,
+  soundOn
 }) => {
   
   const [timerUp, setTimerUp] = useState(false)
@@ -93,6 +94,7 @@ const PlayingGame = ({
         userWin={userWin}
         userLose={userLose}
         draw={draw}
+        soundOn={soundOn}
       />
 
     </div>

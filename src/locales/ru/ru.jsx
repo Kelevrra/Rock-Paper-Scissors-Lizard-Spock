@@ -13,6 +13,7 @@ export default {
   "lose": "Ты проиграл",
   "win": "Ты выиграл",
   "play again": "Ещё раз",
+  "Reset": "Сбросить",
   "rullsHelper": {
     "rock": {
       "name": "Камень",

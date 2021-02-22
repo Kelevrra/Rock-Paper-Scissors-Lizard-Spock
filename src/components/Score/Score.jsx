@@ -13,7 +13,7 @@ const Score = ({
       <div className="score">
         <span className="score__title">{t('score')}</span>
         <span className="score__counter">{score}</span>
-        {score !== 0 ? <button className="score__button" type="button" onClick={() => setScore(0)}>Reset</button>
+        {score !== 0 ? <button className="score__button" type="button" onClick={() => setScore(0)}>{t('Reset')}</button>
         : <button className="score__button" type="button"></button>}
       </div>
   );

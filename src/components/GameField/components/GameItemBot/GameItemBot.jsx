@@ -24,16 +24,24 @@ const GameItemBot = ({
   const [timer, setTimer] = useState(3)
   let count = timer > 0 ? setTimeout(() => setTimer(timer - 1), 1000) : setTimerUp(true)
 
-  const itemImg = !botItem ? '' 
-  : !version && botItem ? (botItem === 'rock' ? rockFun
-  : botItem === 'paper' ? paperFun
-  : botItem === 'scissors' ? scissorsFun
-  : botItem === 'lizard' ? lizardFun
-  : spockFun) : (botItem === 'rock' ? rock
-  : botItem === 'paper' ? paper
-  : botItem === 'scissors' ? scissors
-  : botItem === 'lizard' ? lizard
-  : spock);
+  const itemImg = () => {
+    if(!botItem) return ''
+    else {
+      if(!version && botItem) {
+        if(botItem === 'rock') return rockFun
+        if(botItem === 'paper') return paperFun
+        if(botItem === 'scissors') return scissorsFun
+        if(botItem === 'lizard') return lizardFun
+        else return spockFun
+      } else {
+        if(botItem === 'rock') return rock
+        if(botItem === 'paper') return paper
+        if(botItem === 'scissors') return scissors
+        if(botItem === 'lizard') return lizard
+        else return spock
+      }
+    }
+  }
 
   return (
     <div 
@@ -42,7 +50,7 @@ const GameItemBot = ({
       <div className="game-item--playing game-item d-flex justify-content-center align-items-center">
         {
           timer > 0 ? <span className="timer">{ timer }</span> 
-          : <img src={itemImg} alt=""/>
+          : <img src={itemImg()} alt=""/>
         }
       </div>
     </div>

@@ -29,6 +29,15 @@ function App() {
     localStorage.setItem('RPSLSScore', JSON.stringify(score))
   }, [score])
 
+  useEffect(() => {
+    const raw = localStorage.getItem('RPSLSound') || true
+    setSoundOn(JSON.parse(raw))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('RPSLSound', JSON.stringify(soundOn))
+  }, [soundOn])
+
   return (
     <div className="App">
       <Header
@@ -46,6 +55,7 @@ function App() {
           setGameInit={setGameInit}
           score={score}
           setScore={setScore}
+          soundOn={soundOn}
         />
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Langs from '../Langs/Langs';
 import Rulls from '../Rulls/Rulls';
-// import AudioController from '../AudioController/AudioController';
+import AudioController from '../AudioController/AudioController';
 import Score from '../Score/Score';
 import GameModeToggle from '../GameModeToggle/GameModeToggle';
 import { useTranslation } from 'react-i18next';
@@ -36,10 +36,10 @@ const Header = ({
             setVersion={setVersion}
             version={version}
           />
-          {/* <AudioController
+          <AudioController
             soundOn={soundOn}
             setSoundOn={setSoundOn}
-          /> */}
+          />
           <Score
             score={score}
             setScore={setScore}
