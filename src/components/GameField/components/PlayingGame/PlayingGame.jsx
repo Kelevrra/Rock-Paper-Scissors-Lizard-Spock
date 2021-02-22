@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import GameItem from '../GameItem/GameItem';
 import GameItemBot from '../GameItemBot/GameItemBot';
 import ReloadPopup from '../ReloadPopup/ReloadPopup';
@@ -46,6 +46,23 @@ const PlayingGame = ({
   : chosenItem === 'lizard' ? lizard
   : spock);
 
+  const [counter, setCounter] = useState(score)
+
+  const counterUpdate = () => {
+    if(userWin) {
+      setCounter(counter + 1)
+    } 
+    if (userLose) {
+      setCounter(counter - 1)
+    }
+  }
+
+  useEffect(() => {
+    counterUpdate()
+  },[])
+
+  const updateScore = timerUp ? setScore(counter) : setScore(score)
+
   return (
     <div className="playing-game d-flex align-items-center justify-content-between">
 
@@ -72,8 +89,6 @@ const PlayingGame = ({
         timerUp={timerUp}
         chosenItem={chosenItem}
         botItem={botItem}
-        score={score}
-        setScore={setScore}
         version={version}
         userWin={userWin}
         userLose={userLose}

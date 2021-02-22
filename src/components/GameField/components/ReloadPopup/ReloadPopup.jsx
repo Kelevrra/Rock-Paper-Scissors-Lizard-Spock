@@ -10,8 +10,6 @@ const ReloadPopup = ({
   timerUp,
   chosenItem,
   botItem,
-  score,
-  setScore,
   userWin,
   userLose,
   draw
@@ -34,7 +32,6 @@ const ReloadPopup = ({
         <button className="btn btn-primary" type="button" onClick={() => {
           setGameInit(false)
           setChosenItem('')
-          setScore(score + 1)
           }}>{t("play again")}!</button>
         </div>
         : timerUp && userLose ? <div>
@@ -42,7 +39,6 @@ const ReloadPopup = ({
         <button className="btn btn-primary" type="button" onClick={() => {
           setGameInit(false)
           setChosenItem('')
-          setScore(score - 1)
           }}>{t("play again")}!</button>
         </div> 
         : '' }
