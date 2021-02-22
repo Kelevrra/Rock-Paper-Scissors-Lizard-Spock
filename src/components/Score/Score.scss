@@ -3,6 +3,7 @@
     // margin: 10px 0 10px 10px;
     margin: 10px 0 10px auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80px;
@@ -11,15 +12,27 @@
     border-radius: 10px;
 
     &__title {
-        position: absolute;
-        top: 5px;
         font-size: .8rem;
         font-weight: 800;
+        line-height: 1;
     }
 
     &__counter {
         font-size: 2rem;
+        line-height: 1;
         font-weight: 500;
-        margin-top: 10px;
+    }
+
+    &__button {
+        background: transparent;
+        color: white;
+        line-height: 1;
+        height: 10px;
+        font-size: .8rem;
+        font-weight: 800;
+        border: none;
+        &:hover {
+            opacity: .8;
+        }
     }
 }

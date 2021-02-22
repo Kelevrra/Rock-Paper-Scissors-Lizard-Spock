@@ -1,7 +1,7 @@
 import React from 'react';
 import Langs from '../Langs/Langs';
 import Rulls from '../Rulls/Rulls';
-import AudioController from '../AudioController/AudioController';
+// import AudioController from '../AudioController/AudioController';
 import Score from '../Score/Score';
 import GameModeToggle from '../GameModeToggle/GameModeToggle';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,8 @@ const Header = ({
   setVersion,
   score,
   soundOn,
-  setSoundOn
+  setSoundOn,
+  setScore
 }) => {
 
   const { t } = useTranslation();
@@ -39,7 +40,10 @@ const Header = ({
             soundOn={soundOn}
             setSoundOn={setSoundOn}
           /> */}
-          <Score score={score} />
+          <Score
+            score={score}
+            setScore={setScore}
+          />
         </div>
       </div>
     </header>
