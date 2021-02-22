@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
-import './ReloadPopup.scss'
+import './ReloadPopup.scss';
 
 const ReloadPopup = ({
   version,

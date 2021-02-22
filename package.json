@@ -10,6 +10,7 @@
     "i18next": "^19.8.9",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.1.0",
+    "netlify-cli": "^3.8.5",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.0",
