@@ -6,6 +6,7 @@ import './ReloadPopup.scss';
 import AudioPlay from '../../../AudioPlay/AudioPlay'
 import reptile from '../../../../assets/audio/reptile-wins.mp3'
 import hah from '../../../../assets/audio/hah.mp3'
+import rockWins from '../../../../assets/audio/rock-is.mp3'
 
 const ReloadPopup = ({
   version,
@@ -22,17 +23,16 @@ const ReloadPopup = ({
   
   const { t } = useTranslation();
 
+  const setAudio = () => {
+    if(chosenItem === 'lizard' && timerUp && userWin) return reptile
+    if(chosenItem === 'lizard' && timerUp && botItem === 'lizard') return hah
+    if(timerUp && userWin && botItem === 'lizard') return hah
+    if(timerUp && userWin && chosenItem === 'rock') return rockWins
+    return ''
+  }
+
   return (
     <div className="reload-popup">
-
-      { !version && soundOn ? (
-        <AudioPlay audio={`${chosenItem === 'lizard' && timerUp && userWin ? reptile 
-        : chosenItem === 'lizard' && timerUp && botItem === 'lizard' ? hah
-        : timerUp && userWin && botItem === 'lizard' ? hah
-        : ''}`} />
-      ) : (
-        <AudioPlay audio={``} />
-      ) }
 
       { timerUp && draw ? <div>
         <h1>{t("draw")}!</h1>
@@ -56,6 +56,12 @@ const ReloadPopup = ({
           }}>{t("play again")}!</button>
         </div> 
         : '' }
+
+      { !version && soundOn ? (
+        <AudioPlay audio={setAudio()} />
+      ) : (
+        <AudioPlay audio={``} />
+      ) }
     </div>
   );
 };

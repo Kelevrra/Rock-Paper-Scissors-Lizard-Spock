@@ -19,6 +19,12 @@ const GameField = ({
   
   const [chosenItem, setChosenItem] = useState('')
 
+  const setAudio = () => {
+    if(chosenItem === 'lizard') return reptile
+    if(chosenItem === 'rock') return rockJonson
+    return ''
+  }
+
   return (
     <div className="game-field">
 
@@ -43,12 +49,7 @@ const GameField = ({
       ) }
 
       { !version && soundOn ? (
-        <>
-          <AudioPlay audio={`${
-            chosenItem === 'lizard' ? reptile 
-            : chosenItem === 'rock' ? rockJonson : ''}`} 
-          />
-        </>
+        <AudioPlay audio={setAudio()} />
       ) : (
         <AudioPlay audio={``} />
       )}
