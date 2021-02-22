@@ -3,7 +3,13 @@ import GameItem from '../GameItem/GameItem';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './GameListSelection.scss';
 
-const Selection = ({ version, gameInit, setGameInit, setChosenItem, score, setScore}) => {
+const Selection = ({
+  version,
+  gameInit,
+  setGameInit,
+  setChosenItem
+}) => {
+
   return (
     <div className="game-field__list">
       <div className="row justify-content-between row-1">
@@ -13,19 +19,14 @@ const Selection = ({ version, gameInit, setGameInit, setChosenItem, score, setSc
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-
-        score={score}
-        setScore={setScore}
         />
+
         <GameItem
           item={'scissors'}
           version={version}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-
-                  score={score}
-        setScore={setScore}
         />
       </div>
       <div className="row justify-content-center row-2">
@@ -35,9 +36,6 @@ const Selection = ({ version, gameInit, setGameInit, setChosenItem, score, setSc
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-
-                  score={score}
-        setScore={setScore}
         />
       </div>
       <div className="row justify-content-between row-3">
@@ -47,9 +45,6 @@ const Selection = ({ version, gameInit, setGameInit, setChosenItem, score, setSc
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem} 
-
-                  score={score}
-        setScore={setScore}
         />
         <GameItem
           item={'spock'}
@@ -57,9 +52,6 @@ const Selection = ({ version, gameInit, setGameInit, setChosenItem, score, setSc
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-
-                  score={score}
-        setScore={setScore}
         />
       </div>
     </div>

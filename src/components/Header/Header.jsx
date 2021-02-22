@@ -8,8 +8,16 @@ import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
 
-const Header = ({version, setVersion, score, soundOn, setSoundOn}) => {
+const Header = ({
+  version,
+  setVersion,
+  score,
+  soundOn,
+  setSoundOn
+}) => {
+
   const { t } = useTranslation();
+  
   return (
     <header className="header container">
       <div className="header__top">

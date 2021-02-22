@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import GameItem from '../GameItem/GameItem';
 import GameItemBot from '../GameItemBot/GameItemBot';
 import ReloadPopup from '../ReloadPopup/ReloadPopup';
+import gameRulls from '../../../../data/gameRulls';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PlayingGame.scss'
 //Pics
@@ -16,12 +17,25 @@ import scissorsFun from '../../../../assets/scissors-fun.jpeg'
 import lizardFun from '../../../../assets/lizard-fun.jpg'
 import spockFun from '../../../../assets/spock-fun.jpg'
 
-const PlayingGame = ({gameResult, setGameResult, chosenItem, version, gameInit, setScoreSet, setChosenItem, setGameInit, scoreSet, score, setScore}) => {
+const PlayingGame = ({
+  chosenItem,
+  version,
+  gameInit,
+  setChosenItem,
+  setGameInit,
+  score,
+  setScore
+}) => {
+  
   const [timerUp, setTimerUp] = useState(false)
   const variants = ['rock', 'paper', 'scissors', 'lizard', 'spock']
   const [botItem, setBotItem] = useState(variants[Math.floor(Math.random() * variants.length)])
 
-  const imgPlay = chosenItem === '' ? '' 
+  const userWin = gameRulls(chosenItem, botItem) === 'win'
+  const userLose = gameRulls(chosenItem, botItem) === 'lose'
+  const draw = gameRulls(chosenItem, botItem) === 'nobody'
+
+  const imgPlay = !chosenItem ? '' 
   : !version && chosenItem !== '' ? (chosenItem === 'rock' ? rockFun
   : chosenItem === 'paper' ? paperFun
   : chosenItem === 'scissors' ? scissorsFun
@@ -41,6 +55,7 @@ const PlayingGame = ({gameResult, setGameResult, chosenItem, version, gameInit, 
         gameInit={gameInit}
         timerUp={timerUp}
         imgPlay={imgPlay}
+        userWin={userWin}
       />
 
       <GameItemBot
@@ -48,10 +63,7 @@ const PlayingGame = ({gameResult, setGameResult, chosenItem, version, gameInit, 
         chosenItem={chosenItem}
         botItem={botItem} 
         setTimerUp={setTimerUp}
-        setScoreSet={setScoreSet}
-        scoreSet={scoreSet}
-        score={score}
-        setScore={setScore}
+        userLose={userLose}
       />
 
       <ReloadPopup
@@ -62,7 +74,10 @@ const PlayingGame = ({gameResult, setGameResult, chosenItem, version, gameInit, 
         botItem={botItem}
         score={score}
         setScore={setScore}
-        setGameResult={setGameResult}
+        version={version}
+        userWin={userWin}
+        userLose={userLose}
+        draw={draw}
       />
 
     </div>

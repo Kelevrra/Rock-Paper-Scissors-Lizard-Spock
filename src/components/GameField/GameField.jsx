@@ -4,7 +4,14 @@ import PlayingGame from './components/PlayingGame/PlayingGame'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './GameField.scss';
 
-const GameField = ({version, gameInit, setGameInit, setScoreSet, scoreSet, score, setScore}) => {
+const GameField = ({
+  version,
+  gameInit,
+  setGameInit,
+  score,
+  setScore
+}) => {
+  
   const [chosenItem, setChosenItem] = useState('')
 
   return (
@@ -16,18 +23,14 @@ const GameField = ({version, gameInit, setGameInit, setScoreSet, scoreSet, score
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-          score={score}
-          setScore={setScore}
         />
       ) : (
         <PlayingGame
           chosenItem={chosenItem}
           version={version}
           gameInit={gameInit}
-          setScoreSet={setScoreSet}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
-          scoreSet={scoreSet}
           score={score}
           setScore={setScore}
         />

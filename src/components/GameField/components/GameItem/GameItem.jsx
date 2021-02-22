@@ -1,10 +1,8 @@
-// eslint-disable-next-line
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import './GameItem.scss';
-import gameRulls from '../../../../data/gameRulls';
 //Pics
 import rock from '../../../../assets/rock.svg';
 import paper from '../../../../assets/paper.svg';
@@ -17,8 +15,19 @@ import scissorsFun from '../../../../assets/scissors-fun.jpeg';
 import lizardFun from '../../../../assets/lizard-fun.jpg';
 import spockFun from '../../../../assets/spock-fun.jpg';
 
-const GameItem = ({ item, version, gameInit, setGameInit, setChosenItem, imgPlay, botItem, chosenItem, timerUp, setScore, score }) => {
+const GameItem = ({
+  item,
+  version,
+  gameInit,
+  setGameInit,
+  setChosenItem,
+  imgPlay,
+  timerUp,
+  userWin 
+}) => {
+
   const { t } = useTranslation();
+  const helper = `${t(`rullsHelper.${item}.name`)}! ${t('Beating')}: ${t(`rullsHelper.${item}.beat`)}`;
 
   const itemPic = version ? (item === 'rock' ? rock 
   : item === 'paper' ? paper
@@ -30,11 +39,8 @@ const GameItem = ({ item, version, gameInit, setGameInit, setChosenItem, imgPlay
   : item === 'lizard' ? lizardFun
   : spockFun);
 
-  const helper = `${t(`rullsHelper.${item}.name`)}! ${t('Beating')}: ${t(`rullsHelper.${item}.beat`)}`
-
-
   return (
-    <div className={`item-wrapper ${timerUp && gameRulls(chosenItem, botItem) === 'win' ? 'win' : ''}`}>
+    <div className={`item-wrapper ${timerUp && userWin ? 'win' : ''}`}>
 
      { !gameInit ? (
        <>
@@ -44,11 +50,6 @@ const GameItem = ({ item, version, gameInit, setGameInit, setChosenItem, imgPlay
             onClick={() => {
               setGameInit(true)
               setChosenItem(item)
-
-              setTimeout(() => {
-                return gameRulls(chosenItem, botItem) === 'win' ? setScore(score + 1) : setScore(score)
-              }, 1)
-              
             }}
           >
             <img src={itemPic} alt=""/>
@@ -60,9 +61,8 @@ const GameItem = ({ item, version, gameInit, setGameInit, setChosenItem, imgPlay
           <img src={imgPlay} alt=""/>
         </div>
      ) }
-
     </div>
   );
-}
+};
 
 export default GameItem;
