@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './GameListSelection.scss';
 
 const Selection = ({
-  version,
+  isVersion,
   gameInit,
   setGameInit,
   setChosenItem
@@ -15,7 +15,7 @@ const Selection = ({
       <div className="row justify-content-between row-1">
         <GameItem
           item={'rock'}
-          version={version}
+          isVersion={isVersion}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
@@ -23,7 +23,7 @@ const Selection = ({
 
         <GameItem
           item={'scissors'}
-          version={version}
+          isVersion={isVersion}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
@@ -32,7 +32,7 @@ const Selection = ({
       <div className="row justify-content-center row-2">
         <GameItem
           item={'paper'}
-          version={version}
+          isVersion={isVersion}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}
@@ -41,14 +41,14 @@ const Selection = ({
       <div className="row justify-content-between row-3">
         <GameItem
           item={'lizard'}
-          version={version}
+          isVersion={isVersion}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem} 
         />
         <GameItem
           item={'spock'}
-          version={version}
+          isVersion={isVersion}
           gameInit={gameInit}
           setGameInit={setGameInit}
           setChosenItem={setChosenItem}

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Score.scss';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +7,15 @@ const Score = ({
   score,
   setScore
 }) => {
+
+  useEffect(() => {
+    const raw = localStorage.getItem('RPSLSScore') || 0
+    setScore(JSON.parse(raw))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('RPSLSScore', JSON.stringify(score))
+  }, [score])
 
   const { t } = useTranslation();
   

@@ -9,11 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.scss'
 
 const Header = ({
-  version,
-  setVersion,
+  isVersion,
+  setIsVersion,
   score,
-  soundOn,
-  setSoundOn,
+  isSoundOn,
+  setIsSoundOn,
   setScore
 }) => {
 
@@ -33,12 +33,12 @@ const Header = ({
       <div className="container">
         <div className="row align-items-center">
           <GameModeToggle
-            setVersion={setVersion}
-            version={version}
+            setIsVersion={setIsVersion}
+            isVersion={isVersion}
           />
           <AudioController
-            soundOn={soundOn}
-            setSoundOn={setSoundOn}
+            isSoundOn={isSoundOn}
+            setIsSoundOn={setIsSoundOn}
           />
           <Score
             score={score}

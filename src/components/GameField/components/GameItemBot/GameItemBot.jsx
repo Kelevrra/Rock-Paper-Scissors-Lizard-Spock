@@ -15,19 +15,19 @@ import spockFun from '../../../../assets/spock-fun.jpg';
 
 const GameItemBot = ({
   botItem,
-  setTimerUp,
+  setIsTimerUp,
   chosenItem,
-  version,
+  isVersion,
   userLose
 }) => {
   
   const [timer, setTimer] = useState(3)
-  let count = timer > 0 ? setTimeout(() => setTimer(timer - 1), 1000) : setTimerUp(true)
+  let count = timer > 0 ? setTimeout(() => setTimer(timer - 1), 1000) : setIsTimerUp(true)
 
   const itemImg = () => {
     if(!botItem) return ''
     else {
-      if(!version && botItem) {
+      if(!isVersion && botItem) {
         if(botItem === 'rock') return rockFun
         if(botItem === 'paper') return paperFun
         if(botItem === 'scissors') return scissorsFun

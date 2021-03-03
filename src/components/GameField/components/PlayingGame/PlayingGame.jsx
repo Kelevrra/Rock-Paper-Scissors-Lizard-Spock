@@ -19,16 +19,16 @@ import spockFun from '../../../../assets/spock-fun.jpg'
 
 const PlayingGame = ({
   chosenItem,
-  version,
-  gameInit,
+  isVersion,
+  isGameInit,
   setChosenItem,
   setGameInit,
   score,
   setScore,
-  soundOn
+  isSoundOn
 }) => {
   
-  const [timerUp, setTimerUp] = useState(false)
+  const [isTimerUp, setIsTimerUp] = useState(false)
   const variants = ['rock', 'paper', 'scissors', 'lizard', 'spock']
   const [botItem, setBotItem] = useState(variants[Math.floor(Math.random() * variants.length)])
 
@@ -36,16 +36,24 @@ const PlayingGame = ({
   const userLose = gameRulls(chosenItem, botItem) === 'lose'
   const draw = gameRulls(chosenItem, botItem) === 'nobody'
 
-  const imgPlay = !chosenItem ? '' 
-  : !version && chosenItem !== '' ? (chosenItem === 'rock' ? rockFun
-  : chosenItem === 'paper' ? paperFun
-  : chosenItem === 'scissors' ? scissorsFun
-  : chosenItem === 'lizard' ? lizardFun
-  : spockFun) : (chosenItem === 'rock' ? rock
-  : chosenItem === 'paper' ? paper
-  : chosenItem === 'scissors' ? scissors
-  : chosenItem === 'lizard' ? lizard
-  : spock);
+  const imgPlay = () => {
+    if(!chosenItem ) return ''
+    else {
+      if(!isVersion && chosenItem) {
+        if(chosenItem === 'rock') return rockFun
+        if(chosenItem === 'paper') return paperFun
+        if(chosenItem === 'scissors') return scissorsFun
+        if(chosenItem === 'lizard') return lizardFun
+        return spockFun
+      } else {
+        if(chosenItem === 'rock') return rock
+        if(chosenItem === 'paper') return paper
+        if(chosenItem === 'scissors') return scissors
+        if(chosenItem === 'lizard') return lizard
+        return spock
+      }
+    }
+  }
 
   const [counter, setCounter] = useState(score)
 
@@ -62,7 +70,7 @@ const PlayingGame = ({
     counterUpdate()
   },[])
 
-  const updateScore = timerUp ? setScore(counter) : setScore(score)
+  const updateScore = isTimerUp ? setScore(counter) : setScore(score)
 
   return (
     <div className="playing-game d-flex align-items-center justify-content-between">
@@ -70,31 +78,33 @@ const PlayingGame = ({
       <GameItem
         chosenItem={chosenItem}
         botItem={botItem}
-        gameInit={gameInit}
-        timerUp={timerUp}
+        isGameInit={isGameInit}
+        isTimerUp={isTimerUp}
         imgPlay={imgPlay}
         userWin={userWin}
+        setGameInit={setGameInit}
+        setChosenItem={setChosenItem}
       />
 
       <GameItemBot
-        version={version}
+        isVersion={isVersion}
         chosenItem={chosenItem}
         botItem={botItem} 
-        setTimerUp={setTimerUp}
+        setIsTimerUp={setIsTimerUp}
         userLose={userLose}
       />
 
       <ReloadPopup
         setGameInit={setGameInit}
         setChosenItem={setChosenItem}
-        timerUp={timerUp}
+        isTimerUp={isTimerUp}
         chosenItem={chosenItem}
         botItem={botItem}
-        version={version}
+        isVersion={isVersion}
         userWin={userWin}
         userLose={userLose}
         draw={draw}
-        soundOn={soundOn}
+        isSoundOn={isSoundOn}
       />
 
     </div>

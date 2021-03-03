@@ -17,12 +17,12 @@ import spockFun from '../../../../assets/spock-fun.jpg';
 
 const GameItem = ({
   item,
-  version,
-  gameInit,
+  isVersion,
+  isGameInit,
   setGameInit,
   setChosenItem,
   imgPlay,
-  timerUp,
+  isTimerUp,
   userWin 
 }) => {
 
@@ -30,7 +30,7 @@ const GameItem = ({
   const helper = `${t(`rullsHelper.${item}.name`)}! ${t('Beating')}: ${t(`rullsHelper.${item}.beat`)}`;
 
   const itemPic = () => {
-    if(version) {
+    if(isVersion) {
       if(item === 'rock') return rock
       if(item === 'paper') return paper
       if(item === 'scissors') return scissors
@@ -46,9 +46,9 @@ const GameItem = ({
   }
 
   return (
-    <div className={`item-wrapper ${timerUp && userWin ? 'win' : ''}`}>
+    <div className={`item-wrapper ${isTimerUp && userWin ? 'win' : ''}`}>
 
-     { !gameInit ? (
+     { !isGameInit ? (
        <>
         <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">{helper}</Tooltip>}>
           <button
@@ -58,13 +58,13 @@ const GameItem = ({
               setChosenItem(item)
             }}
           >
-            <img src={itemPic()} alt=""/>
+            <img src={itemPic()} alt={item}/>
           </button>
         </OverlayTrigger>
       </>
      ) : (
         <div className="game-item--playing game-item">
-          <img src={imgPlay} alt=""/>
+          <img src={imgPlay()} alt=""/>
         </div>
      ) }
     </div>
